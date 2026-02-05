@@ -1,0 +1,90 @@
+<nav class="navbar navbar-expand-md bg-white border-bottom sticky-top">
+  <div class="container-fluid">
+
+    <!-- Logo -->
+    <a class="navbar-brand d-flex flex-column align-items-center" href="/listings">
+      <i class="fa-regular fa-compass"></i>
+      <span class="brand-name">WanderLust</span>
+    </a>
+
+    <!-- MOBILE SEARCH BAR -->
+    <div class="d-md-none px-3 pb-2">
+      <form class="d-flex" role="search" action="/listings/search" method="GET">
+        <input
+          class="form-control me-2 search-inp"
+          type="search"
+          name="q"
+          placeholder="Search destinations"
+          required
+        />
+        <button class="btn search-btn" type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+    </div>
+
+    <!-- Mobile toggle -->
+    <button class="navbar-toggler" type="button" id="menuToggle">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <!-- Desktop Nav -->
+    <div class="collapse navbar-collapse d-none d-md-flex">
+
+      <div class="navbar-nav">
+        <a class="nav-link" href="/listings">Explore</a>
+        <a class="nav-link" href="/listings/new">Host</a>
+      </div>
+
+      <!-- SEARCH -->
+      <div class="mx-auto">
+        <form class="d-flex" role="search" action="/listings/search" method="GET">
+          <input
+            class="form-control me-2 search-inp"
+            type="search"
+            name="q"
+            placeholder="Search destinations"
+            required
+          />
+          <button class="btn search-btn" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>Search
+          </button>
+        </form>
+      </div>
+
+      <!-- Auth -->
+      <div class="navbar-nav ms-auto">
+        <% if(!currUser){ %>
+          <a class="nav-link" href="/signup"><b>SignUp</b></a>
+          <a class="nav-link" href="/login"><b>Log in</b></a>
+        <% } %>
+
+        <% if(currUser){ %>
+          <a class="nav-link" href="/logout"><b>Log out</b></a>
+        <% } %>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+
+<!-- MOBILE SIDEBAR -->
+<div class="mobile-sidebar" id="mobileSidebar">
+  <a href="/listings">Explore</a>
+  <a href="/listings/new">Host on WanderLust</a>
+
+  <% if(!currUser){ %>
+    <a href="/signup"><b>SignUp</b></a>
+    <a href="/login"><b>Log in</b></a>
+  <% } %>
+
+  <% if(currUser){ %>
+    <a href="/logout"><b>Log out</b></a>
+  <% } %>
+</div>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<script src="/js/navbar.js"></script>
+<script src="/js/search.js"></script>
