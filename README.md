@@ -266,7 +266,7 @@ https://wanderlust-dakm.onrender.com
 ![ Listing Details ](assets/screenshot-showlisting.png)
 
 ### Location on Map
-![Location on Map](assets/screenshot-.png)
+![Location on Map](assets/screenshot-screenshot-onmaplocation.png)
 
 ### Add New Listing
 ![Add New Listing ](assets/screenshot-newlisting.png)
